@@ -17,7 +17,7 @@ namespace GarbageCollection
     public class A
     {
 
-        public static System.Threading.AutoResetEvent _handle = new System.Threading.AutoResetEvent(true);
+        public static System.Threading.AutoResetEvent _handle = new System.Threading.AutoResetEvent(false);
         public A()
         {
             lock (_handle)
@@ -43,6 +43,7 @@ namespace GarbageCollection
             {
                 Console.WriteLine($"Resource Used By thread {System.Threading.Thread.CurrentThread.ManagedThreadId} {i} times");
                 System.Threading.Thread.Sleep(1000);
+                _handle.Set();
             }
 
         }
