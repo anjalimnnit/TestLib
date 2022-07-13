@@ -63,7 +63,7 @@ namespace GarbageCollection
             obj.UseResource();
             obj = null;
             GC.Collect();
-            Console.WriteLine("Successfully Garbage collected object A");
+            Console.WriteLine($"Successfully Garbage collected object A");
         }
     }
 }
